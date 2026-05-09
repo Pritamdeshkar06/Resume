@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pritam Deshkar Resume</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+    }
+
+    body{
+      background:linear-gradient(135deg,#0f172a,#1e293b,#334155);
+      min-height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      padding:40px;
+    }
+
+    .resume{
+      width:1100px;
+      background:#fff;
+      border-radius:30px;
+      overflow:hidden;
+      box-shadow:0 20px 50px rgba(0,0,0,0.4);
+      display:grid;
+      grid-template-columns:340px 1fr;
+    }
+
+    /* LEFT SIDE */
+
+    .left{
+      background:linear-gradient(180deg,#2563eb,#1d4ed8,#1e40af);
+      color:white;
+      padding:45px 35px;
+      position:relative;
+    }
+
+    .left::before{
+      content:'';
+      position:absolute;
+      width:250px;
+      height:250px;
+      background:rgba(255,255,255,0.08);
+      border-radius:50%;
+      top:-80px;
+      right:-80px;
+    }
+
+    .left::after{
+      content:'';
+      position:absolute;
+      width:180px;
+      height:180px;
+      background:rgba(255,255,255,0.05);
+      border-radius:50%;
+      bottom:-50px;
+      left:-50px;
+    }
+
+    .profile{
+      position:relative;
+      z-index:2;
+      margin-bottom:45px;
+    }
+
+    .profile h1{
+      font-size:42px;
+      font-weight:700;
+      line-height:1.2;
+    }
+
+    .profile p{
+      margin-top:12px;
+      font-size:18px;
+      color:#dbeafe;
+      letter-spacing:1px;
+    }
+
+    .section{
+      margin-bottom:40px;
+      position:relative;
+      z-index:2;
+    }
+
+    .section h2{
+      font-size:20px;
+      margin-bottom:18px;
+      text-transform:uppercase;
+      letter-spacing:1px;
+      position:relative;
+      padding-bottom:8px;
+    }
+
+    .section h2::after{
+      content:'';
+      position:absolute;
+      left:0;
+      bottom:0;
+      width:55px;
+      height:3px;
+      background:white;
+      border-radius:10px;
+    }
+
+    .contact p,
+    .languages li{
+      font-size:14px;
+      margin-bottom:14px;
+      line-height:1.8;
+    }
+
+    .languages ul{
+      list-style:none;
+    }
+
+    .skill{
+      margin-bottom:20px;
+    }
+
+    .skill span{
+      display:block;
+      margin-bottom:8px;
+      font-size:14px;
+    }
+
+    .bar{
+      width:100%;
+      height:10px;
+      background:rgba(255,255,255,0.2);
+      border-radius:30px;
+      overflow:hidden;
+    }
+
+    .fill{
+      height:100%;
+      background:white;
+      border-radius:30px;
+    }
+
+    /* RIGHT SIDE */
+
+    .right{
+      padding:50px;
+      background:#ffffff;
+    }
+
+    .right-section{
+      margin-bottom:45px;
+    }
+
+    .right-section h2{
+      color:#2563eb;
+      font-size:28px;
+      margin-bottom:25px;
+      position:relative;
+      padding-left:18px;
+    }
+
+    .right-section h2::before{
+      content:'';
+      position:absolute;
+      left:0;
+      top:6px;
+      width:6px;
+      height:32px;
+      background:#2563eb;
+      border-radius:10px;
+    }
+
+    .about{
+      background:#f8fafc;
+      padding:25px;
+      border-radius:20px;
+      line-height:2;
+      color:#475569;
+      font-size:15px;
+      border-left:5px solid #2563eb;
+    }
+
+    .box{
+      background:#f8fafc;
+      padding:24px;
+      border-radius:20px;
+      margin-bottom:20px;
+      border-left:5px solid #2563eb;
+      transition:0.3s;
+    }
+
+    .box:hover{
+      transform:translateY(-8px);
+      box-shadow:0 12px 25px rgba(0,0,0,0.08);
+    }
+
+    .box h3{
+      color:#0f172a;
+      margin-bottom:10px;
+      font-size:20px;
+    }
+
+    .box p{
+      color:#475569;
+      line-height:1.8;
+      font-size:14px;
+    }
+
+    .tags{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      margin-top:20px;
+    }
+
+    .tag{
+      background:#dbeafe;
+      color:#1d4ed8;
+      padding:12px 18px;
+      border-radius:40px;
+      font-size:13px;
+      font-weight:600;
+      transition:0.3s;
+    }
+
+    .tag:hover{
+      background:#2563eb;
+      color:white;
+      transform:scale(1.05);
+    }
+
+    .btn{
+      display:inline-block;
+      margin-top:25px;
+      padding:14px 28px;
+      background:#2563eb;
+      color:white;
+      text-decoration:none;
+      border-radius:40px;
+      font-weight:600;
+      transition:0.3s;
+    }
+
+    .btn:hover{
+      background:#1e40af;
+      transform:scale(1.05);
+    }
+
+    @media(max-width:950px){
+
+      body{
+        padding:15px;
+      }
+
+      .resume{
+        grid-template-columns:1fr;
+      }
+
+      .right{
+        padding:35px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <div class="resume">
+
+    <!-- LEFT -->
+
+    <div class="left">
+
+      <div class="profile">
+
+        <h1>Pritam Deshkar</h1>
+
+        <p>Frontend Developer</p>
+
+      </div>
+
+      <div class="section contact">
+
+        <h2>Contact</h2>
+
+        <p>📞 +91 7558619604</p>
+
+        <p>📧 desghkarpritam@gmail.com</p>
+
+        <p>💻 github.com/Pritamdeshkar06</p>
+
+        <p>🔗 linkedin.com/in/pritam-deshkar-b46440249</p>
+
+        <p>📍Wani ( Yavatmal ), Maharashtra</p>
+
+      </div>
+
+      <div class="section">
+
+        <h2>Skills</h2>
+
+        <div class="skill">
+          <span>HTML</span>
+          <div class="bar">
+            <div class="fill" style="width:95%"></div>
+          </div>
+        </div>
+
+        <div class="skill">
+          <span>CSS</span>
+          <div class="bar">
+            <div class="fill" style="width:90%"></div>
+          </div>
+        </div>
+
+        <div class="skill">
+          <span>JavaScript</span>
+          <div class="bar">
+            <div class="fill" style="width:80%"></div>
+          </div>
+        </div>
+
+        <div class="skill">
+          <span>React JS</span>
+          <div class="bar">
+            <div class="fill" style="width:70%"></div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="section languages">
+
+        <h2>Languages</h2>
+
+        <ul>
+          <li>English</li>
+          <li>Hindi</li>
+          <li>Marathi</li>
+        </ul>
+
+      </div>
+
+    </div>
+
+    <!-- RIGHT -->
+
+    <div class="right">
+
+      <div class="right-section">
+
+        <h2>Profile</h2>
+
+        <div class="about">
+
+          Motivated and enthusiastic fresher seeking an opportunity in web development.
+          Skilled in HTML, CSS, JavaScript and responsive design with strong
+          problem-solving abilities and passion for learning modern technologies.
+
+        </div>
+
+      </div>
+
+      <!-- EDUCATION -->
+
+      <div class="right-section">
+
+        <h2>Education</h2>
+
+        <div class="box">
+
+          <h3>B.Tech in Computer Science & Technology</h3>
+
+          <p>
+           Tulshiramji Gaikwad-Patil College of Engineering & Technology, Nagpur <br>
+            2024 - Present <br>
+      
+          </p>
+
+        </div>
+
+        <div class="box">
+
+          <h3>Diploma in Computer Technology</h3>
+
+          <p>
+            Sushganga Polytechnic, Wani <br>
+            2021 - 2023 <br>
+            Percentage: 78%
+          </p>
+
+        </div>
+
+        <div class="box">
+
+          <h3>Higher Secondary Certificate (HSC)</h3>
+
+          <p>
+            L.T. College, Wani <br>
+            2020 - 2021 <br>
+            Percentage: 62%
+          </p>
+
+        </div>
+
+        <div class="box">
+
+          <h3>Secondary School Certificate (SSC)</h3>
+
+          <p>
+            Bahinabai Vidyalaya High School, Jiwati ( Chandrapur ) <br>
+            2019 - 2020 <br>
+            Percentage: 72%
+          </p>
+
+        </div>
+
+      </div>
+
+      <!-- PROJECTS -->
+
+      <div class="right-section">
+
+        <h2>Projects</h2>
+
+        <div class="box">
+
+          <h3>Digital Clock</h3>
+
+          <p>
+            Developed a responsive digital clock using HTML, CSS and JavaScript with real-time time updates.
+          </p>
+
+        </div>
+
+        <div class="box">
+
+          <h3>Student Management System</h3>
+
+          <p>
+            Built a student management system using HTML, CSS and JavaScript.
+          </p>
+
+        </div>
+
+      </div>
+
+      <!-- CERTIFICATIONS -->
+
+      <div class="right-section">
+
+        <h2>Certifications</h2>
+
+        <div class="box">
+
+          <h3>Frontend Web Development</h3>
+
+          <p>
+            Successfully completed a frontend web development certification course.
+          </p>
+
+        </div>
+
+      </div>
+
+      <!-- TECHNOLOGIES -->
+
+      <div class="right-section">
+
+        <h2>Technologies</h2>
+
+        <div class="tags">
+
+          <div class="tag">HTML5</div>
+
+          <div class="tag">CSS3</div>
+
+          <div class="tag">JavaScript</div>
+
+          <div class="tag">Bootstrap</div>
+
+          <div class="tag">React</div>
+
+          <div class="tag">GitHub</div>
+
+        </div>
+
+        <a href="#" class="btn">Download Resume</a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+
+</html>
+
